@@ -9,7 +9,13 @@ public class StarPatterns {
         //invertedFullPyramid();
         //rombusPattern();
         //diamondPattern();
-        hourGlassPattern();
+        //hollowRectangle();
+        // hourGlassPattern();
+        //hollowFullPyramid();
+         hollowInvertedPyramid();
+        // hollowDiamond();
+        // floydsTriangle();
+        // pascalsTriangle();
 
     }
 
@@ -138,7 +144,7 @@ public class StarPatterns {
 
     }
 
-    public static void invertedFullPyramid(){
+    public static void inver6tedFullPyramid(){
 
         // * * * * * *
         //  * * * * *
@@ -222,18 +228,165 @@ public class StarPatterns {
         //  * * * * 
         // * * * * * 
 
-        for(int ){
 
+    for (int i = 5; i > 0; i--) {
+        for (int j = 0; j < 5 - i; j++) {
+            System.out.print(" ");
         }
-        // for(int i = 0; i<5; i++){
-        //     for(int j = 4; j>i; j--){
-        //         System.out.print(" ");
-        //     }
-        //     for(int k = 0; k<i; k++){
-        //         System.out.print(" *");
-        //     }
-        //     System.out.println();
-        // }
+        for (int k = 0; k < i; k++) {
+            System.out.print("* ");
+        }
+        System.out.println();
+    }
+
+    for (int i = 2; i <= 5; i++) {
+        for (int j = 0; j < 5 - i; j++) {
+            System.out.print(" ");
+        }
+        for (int k = 0; k < i; k++) {
+            System.out.print("* ");
+        }
+        System.out.println();
+    }
+ }
+
+    public static void hollowRectangle() {
+    
+        // **********
+        // *        *
+        // *        *
+        // *        *
+        // **********
+
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= 10; j++) {
+                if (i == 1 || i == 5 || j == 1 || j == 10) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void  hollowFullPyramid() {
+    
         
+            //     *
+            //    * *
+            //   *   *
+            //  *     *
+            // *********
+
+        for (int i = 1; i <= 5; i++) {
+            for (int j = i; j < 5; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                if (j == 1 || j == (2 * i - 1) || i == 5) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void hollowInvertedPyramid() {
+
+        // ********* // MEEKA EKAK 
+        //  *     *
+        //   *   *
+        //    * *
+        //     *
+
+        for(int i = 0; i < 10; i++){
+            System.out.print("*");
+        }
+
+        for(int j = 0; j < )
+    }
+ 
+    public static void hollowDiamond() {
+
+        //     *
+        //    * *
+        //   *   *
+        //  *     *
+        //   *   *
+        //    * *
+        //     *
+
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 4 - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < 2 * i + 1; j++) {
+                if (j == 0 || j == 2 * i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+        for (int i = 4 - 2; i >= 0; i--) {
+            for (int j = 4 - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < 2 * i + 1; j++) {
+                if (j == 0 || j == 2 * i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+ 
+    public static void floydsTriangle() {
+        
+        // 1
+        // 2 3
+        // 4 5 6
+        // 7 8 9 10
+
+         int number = 1;
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(number + " ");
+                number++;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pascalsTriangle() {
+        
+        //       1
+        //      1 1
+        //     1 2 1
+        //    1 3 3 1
+
+
+        for (int i = 0; i < 4; i++) {
+            int number = 1;
+            for (int j = 4 - i; j > 1; j--) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print(number + " ");
+                number = number * (i - j) / (j + 1);
+            }
+            System.out.println();
+        }
     }
 }
+
