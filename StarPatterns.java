@@ -1,7 +1,7 @@
 public class StarPatterns {
     public static void main(String[] args) {
         // flag();
-        // rightHalfPirameeder();
+         rightHalfPirameeder();
         //leftHalfPirameeder();
         //fullParamid();
         //invertedRightHaifParamid();
@@ -12,7 +12,7 @@ public class StarPatterns {
         //hollowRectangle();
         // hourGlassPattern();
         //hollowFullPyramid();
-         hollowInvertedPyramid();
+        // hollowInvertedPyramid();
         // hollowDiamond();
         // floydsTriangle();
         // pascalsTriangle();
@@ -58,7 +58,7 @@ public class StarPatterns {
 
         System.out.println("\n");
 
-        for(int i = 1; i<10; i++){
+        for(int i = 1; i<7; i++){
             for(int j = 0; j<i; j++){
                 System.out.print("*");
             }
@@ -296,18 +296,50 @@ public class StarPatterns {
 
     public static void hollowInvertedPyramid() {
 
-        // ********* // MEEKA EKAK 
+        //*********** // MEEKA EKAK 
+        // *       *
         //  *     *
         //   *   *
         //    * *
         //     *
 
-        for(int i = 0; i < 10; i++){
-            System.out.print("*");
+
+    int totalWidth = 10;
+    int rows = totalWidth / 2 + 1;
+
+    for (int i = 0; i < rows; i++) {
+
+        // Leading spaces
+        for (int j = 0; j < i; j++) {
+            System.out.print(" ");
         }
 
-        for(int j = 0; j < )
+        int currentWidth = totalWidth - (2 * i);
+
+        if (i == 0) {
+            // First row → full stars
+            for (int j = 0; j < totalWidth; j++) {
+                System.out.print("*");
+            }
+        }
+        else if (currentWidth > 1) {
+            // Middle rows
+            System.out.print("*");
+
+            for (int j = 0; j < currentWidth - 1; j++) {
+                System.out.print(" ");
+            }
+
+            System.out.print("*");
+        }
+        else {
+            // Last row (only one star)
+            System.out.print("* ");
+        }
+
+        System.out.println();
     }
+}
  
     public static void hollowDiamond() {
 
